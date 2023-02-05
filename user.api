@@ -1,0 +1,22 @@
+syntax = "v1"
+
+info (
+	title: test
+	desc: test
+	author: "hiahia12"
+	email: "284662907@qq.com"
+)
+
+type request {
+	Userid int64 `json:"userid"`
+}
+
+type response {
+	Username string `json:"username"`
+}
+
+service user-api {
+	@handler GetUser
+	get /users/id/:userId(request) returns(response)
+	
+}
